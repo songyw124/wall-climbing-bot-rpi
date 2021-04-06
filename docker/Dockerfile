@@ -12,15 +12,22 @@ RUN useradd -ms /bin/bash hero
 WORKDIR /home/hero
 
 # create ws folder
-RUN mkdir -p /data
+RUN mkdir -p ./data
 
 # change workding directory
-WORKDIR /data
+WORKDIR ./data
 
 # give the file 
-ADD . /data
+ADD . .
+
+WORKDIR /home/hero
 
 # change user
+RUN echo 'hero:hero1210' | chpasswd
+
+# add user to sudo group
+RUN usermod -aG sudo hero
+
 USER hero
 
 CMD ["/bin/bash"]
