@@ -1,12 +1,15 @@
 version: '3.0'
 services:
     wc-rpi:
-        image: wc-rpi:latest
-        network_mode: "host"
+        image: wc-rpi:1.0.0
         privileged: true
+        hostname: ubuntu
+        network_mode: host
         environment:
-         - DISPLAY=$DISPLAY
+         - DISPLAY=${DISPLAY}
         volumes:
-         - /dev/video0:/dev/video0
+         # give authority and camera for gui app
          - /tmp/.X11-unix:/tmp/.X11-unix
+         - $HOME/.Xauthority:/home/hero/.Xauthority:ro
+         - /dev/video0:/dev/video0
          - ./:/home/hero/data

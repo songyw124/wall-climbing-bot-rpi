@@ -1,0 +1,5 @@
+Docker file building
+
+docker build --tag wc-rpi:1.0.0 .
+
+docker-compose run wc-rpi

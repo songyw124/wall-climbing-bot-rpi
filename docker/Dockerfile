@@ -5,7 +5,8 @@ LABEL author="JungillKang"
 LABEL version="1.0"
 
 # create user
-RUN apt-get update
+RUN apt update
+RUN apt install x11-apps -y
 # -m = --create-home
 RUN useradd -ms /bin/bash hero
 
