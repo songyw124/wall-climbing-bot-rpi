@@ -1,10 +1,13 @@
-Docker file building
+# Docker file building
 
 docker build --tag wc-rpi:1.0.0 .
 
 docker-compose run wc-rpi
 
 # if want to save the image
+docker commit docker_wc-rpi_run_XXX wc-rpi:X.X.X
+
+# After save, update docker-compose.yaml to correct version to use "docker-compose" command
 
 docker tag wc-rpi:1.0.0 jgkang1210/wc-rpi:1.0.0
 

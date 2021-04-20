@@ -1,7 +1,7 @@
 version: '3.0'
 services:
     wc-rpi:
-        image: wc-rpi:1.0.0
+        image: wc-rpi:1.1.1
         privileged: true
         hostname: ubuntu
         network_mode: host
@@ -11,5 +11,10 @@ services:
          # give authority and camera for gui app
          - /tmp/.X11-unix:/tmp/.X11-unix
          - $HOME/.Xauthority:/home/hero/.Xauthority:ro
-         - /dev/video0:/dev/video0
          - ./:/home/hero/data
+         - /dev/video0:/dev/video0
+         - /dev/video1:/dev/video1
+         - /dev/video2:/dev/video2
+         - /dev/video3:/dev/video3
+         - /dev/video4:/dev/video4
+         - /dev/video5:/dev/video5
