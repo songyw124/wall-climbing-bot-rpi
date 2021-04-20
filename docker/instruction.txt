@@ -3,3 +3,11 @@ Docker file building
 docker build --tag wc-rpi:1.0.0 .
 
 docker-compose run wc-rpi
+
+# if want to save the image
+
+docker tag wc-rpi:1.0.0 jgkang1210/wc-rpi:1.0.0
+
+docker login
+
+docker push jgkang1210/wc-rpi:1.0.0
