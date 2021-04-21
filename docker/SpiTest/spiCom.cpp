@@ -5,6 +5,8 @@
 // an STM32 slave
 //
 // Source: http://robotics.hobbizine.com/raspiduino.html
+//
+// Run this program as root!
 
 #include <sys/ioctl.h>
 #include <linux/spi/spidev.h>
@@ -17,7 +19,7 @@ using namespace std;
 
 //----- Global variables -----//
 int fd;
-uint8_t sndStr[] = {'H', 'e', 'l', 'l', 'o', ' ', 'S', 'T', 'M', '3', '2'};
+uint8_t sndStr[] = {'H', 'i', ' ', 'f', 'r', 'o', 'm', ' ', 'C', 'M', '4'};
 uint8_t result;
 
 //----- Function declaration -----//
