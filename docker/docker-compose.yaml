@@ -3,14 +3,17 @@ services:
     wc-rpi:
         image: wc-rpi:1.1.3
         privileged: true
+        tty: true
+        stdin_open: true
         hostname: ubuntu
         network_mode: host
         environment:
          - DISPLAY=${DISPLAY}
+         - QT_X11_NO_MITSHM=1
         volumes:
          # give authority and camera for gui app
          - /tmp/.X11-unix:/tmp/.X11-unix
-         - $HOME/.Xauthority:/home/hero/.Xauthority:ro
+         - $HOME/.Xauthority:/home/hero/.Xauthority:rw
          - ./:/home/hero/data
          - /dev/video0:/dev/video0
          - /dev/video1:/dev/video1
