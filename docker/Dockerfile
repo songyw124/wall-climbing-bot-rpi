@@ -5,8 +5,15 @@ LABEL author="JungillKang"
 LABEL version="1.0"
 
 # create user
-RUN apt update
-RUN apt install x11-apps -y
+RUN apt-get upgrade -y
+RUN apt-get update -y
+RUN apt-get install x11-apps -y
+RUN apt-get update
+RUN apt-get install ros-foxy-turtlesim -y
+RUN apt-get install ~nros-foxy-rqt* -y
+RUN apt-get update
+RUN apt-get upgrade -y
+
 # -m = --create-home
 RUN useradd -ms /bin/bash hero
 
